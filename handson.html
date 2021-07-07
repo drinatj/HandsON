@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="tampil"></div>
+    <br>
+    <button id="avgbtn">Console log</button>
+    <p id="pAvg">Result :</p>
+    <script>
+        const students = [
+        { name: "alice", age: 20 },
+        { name: "bob", age: 21 },
+        { name: "jane", age: 20 },
+      ];
+
+      let tampil = document.getElementById("tampil");
+
+      let tbl = document.createElement("table");
+      let tblBody = document.createElement("tbody");
+
+      for (let i = 0; i < students.length; i++) {
+        let row = document.createElement("tr");
+        let cell = document.createElement("td");
+        let cellText = document.createTextNode(
+          students[i].name + " | " + students[i].age
+        );
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+        tblBody.appendChild(row);
+      }
+
+      tbl.appendChild(tblBody);
+      tampil.appendChild(tbl);
+      tbl.setAttribute("border", "1");
+
+      avgbtn.addEventListener("click", () => {
+        const total = students.reduce((acc, students) => acc + students.age, 0);
+        let avghsl = document.getElementById("pAvg");
+        avghsl.innerHTML = "Result : " + total / students.length;
+      });
+    </script>
+</body>
+</html>
