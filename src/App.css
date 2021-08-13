@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+
+.Navbar{
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: large;
+
+}
+
+.Search{
+  margin-left: 20px;
+}
